@@ -69,18 +69,81 @@ function areaCirculo(radio) {
 console.groupEnd();
 
 // Aqui interactaumos con HTML
-function calcularPerimetroCuadrado(){
-    const inputCuadrado = document.getElementById("inputCuadrado").value;
-    const perimetro = perimetroCuadrado(inputCuadrado);
+function calcularPerimetroCuadrado() {
+  const inputCuadrado = document.getElementById("inputCuadrado").value;
+  const perimetro = perimetroCuadrado(inputCuadrado);
 
-    alert(perimetro);
-
+  alert(perimetro);
 }
 
-function calcularAreaCuadrado(){
-    const inputCuadrado = document.getElementById("inputCuadrado").value;
-    const area = areaCuadrado(inputCuadrado);
+function calcularAreaCuadrado() {
+  const inputCuadrado = document.getElementById("inputCuadrado").value;
+  const area = areaCuadrado(inputCuadrado);
 
-    alert(area);
+  alert(area);
+}
 
+function calcularPerimetroTriangulo() {
+  const inputTriangulo1 = parseInt(
+    document.getElementById("inputTriangulo1").value
+  );
+  const inputTriangulo2 = parseInt(
+    document.getElementById("inputTriangulo2").value
+  );
+  const inputBase = parseInt(document.getElementById("inputBasePer").value);
+
+  const perimetro = perimetroTriangulo(
+    inputTriangulo1,
+    inputTriangulo2,
+    inputBase
+  );
+
+  alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+  const inputAltura = document.getElementById("inputAltura").value;
+  const inputBase = document.getElementById("inputBase").value;
+
+  const area = areaTriangulo(inputBase, inputAltura);
+
+  alert(area);
+}
+
+function calcularPerimetroCirculo() {
+  const inputCirculo = parseInt(document.getElementById("inputCirculo").value);
+  const perimetro = perimetroCirculo(inputCirculo);
+
+  alert(perimetro);
+}
+
+function calcularAreaCirculo() {
+  const inputCirculo = parseInt(document.getElementById("inputCirculo").value);
+  const area = areaCuadrado(inputCirculo);
+
+  alert(area);
+}
+
+function calcularIsosceles() {
+  const lado1 = parseInt(document.getElementById("lado1").value);
+  const lado2 = parseInt(document.getElementById("lado2").value);
+  const ladoBase = parseInt(document.getElementById("ladoBase").value);
+
+  if (lado1 !== lado2) {
+    alert(
+      "los lados no son iguales, por lo cual no es un triangulo isosceles!"
+    );
+  } else {
+    const trianguloLadoB = ladoBase / 2;
+    const trianguloLadoBase = lado1;
+
+    const trianguloLadoBCuadrado = trianguloLadoB * trianguloLadoB;
+    const trianguloLadoBaseCuadrado = trianguloLadoBase * trianguloLadoBase;
+    const trianguloPequeLadoA = Math.sqrt(
+      trianguloLadoBaseCuadrado - trianguloLadoBCuadrado
+    );
+
+    const altura = trianguloPequeLadoA;
+    alert(altura);
+  }
 }
