@@ -30,6 +30,7 @@ function buttonPriceDiscount() {
 
     default:
       alert(`El cupon ${inputCoupon} no es valido`);
+      descuento = 0;
       break;
   }
 
