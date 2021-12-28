@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Capacidad de Ahorro</title>
+    <style>
+      body {
+        background: url("cocora.png");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+      }
+
+      .app {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .container {
+        width: 600px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        backdrop-filter: blur(8px);
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 18px;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .container h1 {
+        text-align: center;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .input {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        height: 30px;
+        font-size: 16px;
+        padding: 6px;
+        margin-bottom: 12px;
+      }
+
+      .input:focus {
+        outline: none !important;
+        border-color: transparent;
+      }
+
+      .input-ingresos,
+      .input-gastos-fijos,
+      .input-gastos-varios {
+        margin-bottom: 28px;
+      }
+
+      .button {
+        background: #71aca7;
+        border-radius: 8px;
+        color: #fff;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        height: 50px;
+        margin-top: 14px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="container">
+        <h1 class="title">Capacidad de Ahorro</h1>
+
+        <form action="/" class="form">
+          <div>
+            <label for="ingresos" class="label">Ingresos:</label>
+            <input
+              type="number"
+              id="ingresos"
+              placeholder="Ingresa el total de tus ingresos"
+              class="input input-ingresos"
+            />
+
+            <label for="gastos-fijos" class="label">Gastos fijos:</label>
+            <input
+              type="number"
+              id="gastos-fijos"
+              placeholder="Ingresa el total de tus gastos fijos(alquiler, transporte, alimentación, etc.)"
+              class="input input-gastos-fijos"
+            />
+
+            <label for="gastos-varios" class="label">Gastos varios:</label>
+            <input
+              type="number"
+              id="gastos-varios"
+              placeholder="Ingresa el total de tus gastos varios(entretenimiento, vacaciones, etc.)"
+              class="input input-gastos-varios"
+            />
+          </div>
+        </form>
+
+        <p id="resultado"></p>
+
+        <input
+          type="submit"
+          value="Calcular"
+          class="button login-button"
+          onclick="calcularAhorro()"
+        />
+      </div>
+    </div>
+    <script src="./capacidadAhorro.js"></script>
+  </body>
+</html>
